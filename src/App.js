@@ -1,17 +1,40 @@
 import Header from "./Header";
+import './App.css';
 
 
 function App() {
+  let subscribers  =[{
+    id:1,
+    name: "Amit",
+    phone: "111111111111"},
+    { id:2,
+      name: "Sumit",
+    phone: "22222222222"
+
+    }]
   return (
     <div>
-      <Header/>
-       <button>Add</button>
-       <div>
-       <span>Name </span><br/>
-       <span>Phone</span> 
-       </div> 
-       
-    </div>
+      <Header />
+        <div className="component-body-container">
+          <button className="custom-btn add-btn">Add</button>
+
+          <div className="grid-container heading-container">
+            <span className="grid-item name-heading">Name</span>
+            <span className="grid-item phone-heading">Phone</span>
+          </div>
+         
+         {
+          subscribers.map(sub=>{
+            return <div key={sub.id} className="grid-container">
+              <span className="grid-items">{sub.name}</span>
+              <span className="grid-items">{sub.phone}</span>
+              </div>
+
+          })
+         }
+           
+        </div>
+      </div>
   );
 }
 

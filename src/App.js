@@ -3,7 +3,12 @@ import './App.css';
 
 
 function App() {
-  let subscribers  =[{
+  
+  function clickHandler(message) {
+     alert(message);
+  }
+
+    let subscribers  =[{
     id:1,
     name: "Amit",
     phone: "111111111111"},
@@ -29,7 +34,7 @@ function App() {
               <span className="grid-items">{sub.name}</span>
               <span className="grid-items">{sub.phone}</span>
               <span className="grid-item action-btn-container">
-                  <button className="custom-btn delete-btn">Delete</button>
+                  <button className="custom-btn delete-btn" onClick={clickHandler.bind(this, "delete clicked")}>Delete</button>
                 </span>
               </div>
 
